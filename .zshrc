@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 function update(){
-  git checkout master && git pull && git checkout - && git rebase master
+  git checkout master && git pull && git checkout - && git merge master
 }
 
 export PATH="$PATH:$HOME/.rvm/bin"
