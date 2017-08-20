@@ -42,5 +42,13 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 " ===== CUSTOM CONFIGURATION ====
+Plugin 'bling/vim-airline'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-surround'
 " Syntax highlight
 syntax on
+" Enable powerline fonts in airline
+let g:airline_powerline_fonts = 1
