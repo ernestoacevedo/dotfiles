@@ -2,15 +2,15 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/ernesto/.oh-my-zsh
+export ZSH=/Users/developer/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history)
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -85,9 +85,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $HOME/.zshenv
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+
+function update(){
+  git checkout master && git pull && git checkout - && git merge master
+}
+
+export PATH="$PATH:$HOME/.rvm/bin"
 
 transfer() {
     # write to output to tmpfile because of progress bar
@@ -98,7 +101,5 @@ transfer() {
 }
 
 alias transfer=transfer
-alias up='cd ..'
-alias h='history'
-alias pr='pry-remote'
-
+alias h="history"
+alias up="cd .."
